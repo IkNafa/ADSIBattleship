@@ -17,6 +17,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.border.MatteBorder;
 import java.awt.Color;
+import javax.swing.JTextField;
 
 public class VentanaAdministrador extends JFrame {
 	private JTabbedPane tabbedPane;
@@ -28,6 +29,10 @@ public class VentanaAdministrador extends JFrame {
 	private JButton btnInfo;
 	private JComboBox comboBox;
 	private JPanel panel_1;
+	private JPanel panelEditLEvel;
+	private JTextField txtPresupuesto;
+	private JTextField txtArmamento;
+	private JComboBox comboBox_1;
 
 	/**
 	 * Launch the application.
@@ -63,6 +68,7 @@ public class VentanaAdministrador extends JFrame {
 			tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 			tabbedPane.addTab("Jugadores", null, getPanelJugadores(), null);
 			tabbedPane.addTab("Partida", null, getPanelPartida(), null);
+			tabbedPane.addTab("Nivel", null, getPanel_2_1(), null);
 		}
 		return tabbedPane;
 	}
@@ -152,5 +158,38 @@ public class VentanaAdministrador extends JFrame {
 			panel_1 = new JPanel();
 		}
 		return panel_1;
+	}
+	private JPanel getPanel_2_1() {
+		if (panelEditLEvel == null) {
+			panelEditLEvel = new JPanel();
+			panelEditLEvel.add(getComboBox_1());
+			panelEditLEvel.add(getTxtPresupuesto());
+			panelEditLEvel.add(getTxtArmamento());
+		}
+		return panelEditLEvel;
+	}
+	private JTextField getTxtPresupuesto() {
+		if (txtPresupuesto == null) {
+			txtPresupuesto = new JTextField();
+			txtPresupuesto.setText("Presupuesto ");
+			txtPresupuesto.setColumns(10);
+		}
+		return txtPresupuesto;
+	}
+	private JTextField getTxtArmamento() {
+		if (txtArmamento == null) {
+			txtArmamento = new JTextField();
+			txtArmamento.setText("Armamento");
+			txtArmamento.setColumns(10);
+		}
+		return txtArmamento;
+	}
+	private JComboBox getComboBox_1() {
+		if (comboBox_1 == null) {
+			comboBox_1 = new JComboBox();
+			comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Fácil", "Medio", "Díficil"}));
+			comboBox_1.setSelectedIndex(1);
+		}
+		return comboBox_1;
 	}
 }
