@@ -33,6 +33,7 @@ public class VentanaAdministrador extends JFrame {
 	private JTextField txtPresupuesto;
 	private JTextField txtArmamento;
 	private JComboBox comboBox_1;
+	private JButton btnGuardar;
 
 	/**
 	 * Launch the application.
@@ -165,6 +166,7 @@ public class VentanaAdministrador extends JFrame {
 			panelEditLEvel.add(getComboBox_1());
 			panelEditLEvel.add(getTxtPresupuesto());
 			panelEditLEvel.add(getTxtArmamento());
+			panelEditLEvel.add(getBtnGuardar());
 		}
 		return panelEditLEvel;
 	}
@@ -191,5 +193,11 @@ public class VentanaAdministrador extends JFrame {
 			comboBox_1.setSelectedIndex(1);
 		}
 		return comboBox_1;
+	}
+	private JButton getBtnGuardar() {
+		if (btnGuardar == null) {
+			btnGuardar = new JButton("Guardar");
+		}
+		return btnGuardar;
 	}
 }
